@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .dropdownbtn{
+            background-color: green;
+            color: white;
+            padding: 16px;           
+
+        }
+
+.dropdown{
+
+    position: relative;
+    /* display: inline-block; */
+}
+
+.dropdown-content{
+    background-color: white;
+     display: none; 
+    box-shadow: 1px solid white;
+    z-index: 1;
+    position: absolute;
+    min-width: 160px;
+  
+}
+
+.dropdown-content a{
+
+    text-decoration: none;
+    font-size: medium;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="dropdown" style="float: left;">
+
+    <button class="dropdownbtn"> LIST </button>
+<div class="dropdown-content"> 
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Orders</a>
+    <a href="#">Contact Us </a>
+
+
+</div>
+
+    </div>
+    
+</body>
+</html>
