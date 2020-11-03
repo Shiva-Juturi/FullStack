@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+<style>
+
+.container{
+display: flex;
+flex-direction:row;
+justify-content:flex-end;
+align-items: center;
+
+}
+
+.block{
+    border: 1px solid blue;
+    padding: 20px;
+margin: 20px;
+background-color: chartreuse;
+
+}
+
+
+
+@media screen and (min-width: 900px) {
+  body {
+    background-color:olive;
+  }
+}
+
+@media only  screen and (max-width: 1200px) {
+  body {
+    background-color:red;
+  }
+}
+
+@media only  screen and (min-width: 12px) {
+    .block {
+    background-color:red;
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+    <h1 style="color: white; text-align: center;">  drag the window see the color change</h1>
+
+    <div class="container">
+       
+        <div class="block" style="background-color: olive;"> <h1>Block One</h1></div>
+<div class="block" style="background-color:orange"><h1>Block Two</h1></div>
+<div class="block"><h1>Block Three</h1></div>
+    </div>
+    
+</body>
+</html>
