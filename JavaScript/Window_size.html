@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: green;" >
+
+
+    <p id="demo"  style="text-align: center; font-size: x-large; color: white; padding-top: 30px;">  </p>
+
+    <p id="demo1"  style="text-align: center; font-size: x-large; color: white; padding-top: 30px;">  </p>
+
+    <p id="demo2"  style="text-align: center; font-size: x-large; color: white; padding-top: 30px;">  </p>
+
+
+    <script>
+        var w = window.innerWidth ;  //||  document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight ; //|| document.documentElement.clientHeight || document.body.clientHeight;
+
+        var x =document.getElementById('demo');
+        x.innerHTML =  "Browser inner window width: " + w + ", height: " + h + ".";
+document.getElementById('demo1').innerHTML= "Screen height is " + screen.height;
+
+document.getElementById('demo2').innerHTML="Page hostname is: " + window.location.hostname;
+
+
+
+    </script>
+
+    
+<input type="button" value="Load new document" onclick="newDoc()" >
+
+<script>
+function newDoc() {
+  window.location.assign("https://www.w3schools.com")
+}
+</script>
+    
+</body>
+</html>

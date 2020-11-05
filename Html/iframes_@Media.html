@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe and @media</title>
+
+    <style>
+        body {
+          background-color:green;
+          color: black;
+        }
+        
+        /* On screens that are 992px wide or less, the background color is blue */
+        @media screen and (max-width: 1024px) {
+          body {
+            background-color: blue;
+            color: white;
+          }
+        }
+        
+        /* On screens that are 600px wide or less, the background color is olive */
+        @media screen and (max-width: 900px) {
+          body {
+            background-color: olive;
+            color: white;
+          }
+        }
+        </style>
+</head>
+<body>
+    
+<!--   ?autoplay=1    means automatically video will play while loading page  -->
+<!-- &mute=1   -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/agzj-co-Epc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7663.409238556865!2d80.44715407434796!3d16.18417590523995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4a7328d84076e1%3A0x38706f720ef511b9!2sVatticherukuru%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1604561865786!5m2!1sen!2sin" width="600" height="315" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+      <h1 style="color: honeydew;">Resize the browser window to see the effect!</h1>
+      <p style="color: honeydew;">By default, the background color of the document is "tan". If the screen size is 992px or less, the color will change to "blue". If it is 600px or less, it will change to "olive".</p>
+
+
+</body>
+</html>
