@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <i onclick="like()" class="fa fa-thumbs-up" style="font-size: 50px;color: red;" ></i><span id="like"  style="padding: 20px">0</span>
+
+    <i onclick="dislike()" class="fa fa-thumbs-down" style="font-size: 50px;color:black;" ></i><span  style="padding: 20px" id="dislike">0</span>
+
+
+    <script>
+            var like1=0;
+            var dislike1=0;
+        function like(){
+//    like1 = like1+1;
+//   document.getElementById('dislike').innerHTML=dislike1;
+
+            var getcount=  parseInt( document.getElementById('like').innerHTML);
+            getcount = getcount + 1;
+           document.getElementById('like').innerHTML=getcount;
+
+            console.log(getcount);
+           
+                   }
+        function dislike(){
+            dislike1 = dislike1 +1;
+            document.getElementById('dislike').innerHTML=dislike1;
+            console.log(dislike1);
+}
+
+
+
+    </script>
+
+</body>
+</html>

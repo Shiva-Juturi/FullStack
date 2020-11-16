@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="">
+
+        UserName : <input type="text" id="username"> <br><br>
+        Comments : <textarea name="" id="comments" cols="30" rows="5"></textarea> <br>
+        <button onclick="displaycomments()"> submit</button>
+
+    </form>
+
+    <ul id="list">
+
+
+    </ul>
+
+    <script>
+        var allcomments = [];
+        function displaycomments() {
+            event.preventDefault();
+
+            var uname = document.getElementById('username').value;
+            var comment1 = document.getElementById('comments').value;
+            var usercomment = {
+                username: uname,
+                comment1: comment1
+            }
+
+            allcomments.push(usercomment);
+            document.getElementById('username').value='';
+            document.getElementById('comments').value='';
+            showcomments();
+        }
+
+        function showcomments() {
+            event.preventDefault();
+            
+            var ul = document.getElementById('list');
+            ul.innerHTML ="";
+
+            for (var i = 0; i < allcomments.length; i++) {
+
+                var singlecomment = allcomments[i];
+                console.log(singlecomment.username, singlecomment.comment1)
+
+                ul.innerHTML = ul.innerHTML + " <li>" + singlecomment.username +':' + singlecomment.comment1  + "</li> " ;
+
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
