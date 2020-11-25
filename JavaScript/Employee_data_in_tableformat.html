@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      table{
+            border-collapse: collapse;
+        }
+      
+        table ,th ,tr ,td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+</style>
+<body>
+    <table> 
+        <thead>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Projects</th>
+            <th>Reporting Manager</th>
+            <th>Skills</th>
+            <th>Experience</th>
+            <th>Designation</th>
+        </thead>
+        <tbody id="table-data">
+         
+        </tbody>
+    </table>
+
+</body>
+<script>
+
+ var employeeList = [
+    {
+        name:'Nivetha',
+        address:'Hyderabad',
+        projects:'Cisco',
+        reporting_Manager:'Prashanth',
+        skills:'Javascript',
+        experience:'2+ years',
+        designation:'Software Engineering'
+    },
+    {
+        name:'Gowtham',
+        address:'Hyderabad',
+        projects:'HP',
+        reporting_Manager:'Sriram',
+        skills:'Dot.Net',
+        experience:'5+ years',
+        designation:'Consultant'
+    },
+    {
+        name:'Swetha',
+        address:'Erode',
+        projects:'L & G',
+        reporting_Manager:'Premlatha',
+        skills:'Java',
+        experience:'1+ years',
+        designation:'Software Developer'
+    },
+    {
+        name:'Subha',
+        address:'Coimbatore',
+        projects:'Segate',
+        reporting_Manager:'Sowmya',
+        skills:'Javascript',
+        experience:'6+ Years',
+        designation:'Sn Software Engineer'
+    },
+    {
+        name:'Krishnan',
+        address:'Banglore',
+        projects:'Anaplan',
+        reporting_Manager:'Manish',
+        skills:'Supply chain',
+        experience:'8+ Years',
+        designation:'Project Lead'
+    }
+  ]
+
+  EmployeeDetails(employeeList);
+
+function EmployeeDetails(data){
+
+    var tables = document.getElementById("table-data");
+
+var i=0;
+while(i<data.length){
+    var row = `<tr>
+        <td>${data[i].name}</td>
+        <td>${data[i].address}</td>
+        <td>${data[i].projects}</td>
+        <td>${data[i].reporting_Manager}</td>
+        <td>${data[i].skills}</td>
+        <td>${data[i].experience}</td>
+        <td>${data[i].designation}</td>
+        </tr>`
+        tables.innerHTML += row; 
+        i++;
+}
+}
+
+</script>
+</html>

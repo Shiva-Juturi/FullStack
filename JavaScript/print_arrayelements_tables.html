@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Data print in table format in html page</title>
+
+    <style>
+        table,
+        th,
+        td {
+
+            border: 1px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+
+
+        var employeslist = [
+            {
+                name: 'sambasiva rao',
+                id1: '20011917',
+                skill: 'DBA',
+                exp: 5
+            },
+
+            {
+                name: 'Nalini',
+                id1: '20011918',
+                skill: 'Developer',
+                exp: 10
+            }
+
+        ];
+
+        document.write(" <H1>" + "   Array Data print in table format in html page  " + "</H1>   ");
+
+        document.write(" <table>  ");
+        document.write("<tr><th> name " + "</th>" + "<th>  id " + "</th>" + "<th>  skill " + "</th>" + "<th>  exp " + "</th>" + "</tr>");
+        for (var i = 0; i < employeslist.length; i++) {
+
+            document.write("<tr><td>" + employeslist[i].name + "</td>" + "<td>" + employeslist[i].id1 + "</td>" + "  <td>" + employeslist[i].skill + "</td>" + "  <td>" + employeslist[i].exp + "</td>" + "</tr>");
+
+        }
+        document.write(" </table>  ");
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

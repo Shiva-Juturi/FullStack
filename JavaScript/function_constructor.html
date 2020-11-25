@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <form action="">
+      UserName:  <input type="text" id="name"> <br> <br>
+      customerid: <input type="text" id="cid"> <br> <br>
+      Message : <textarea name="" id="message" cols="30" rows="10"></textarea> <br> <br>
+
+        <button  onclick="addcomments()" >Summit</button>
+
+    </form>
+
+<script>
+
+    var Meassges=[];
+
+    function Enquery( name,cid,message){
+        this.name=name,
+        this.cid=cid,
+        this.message=message
+
+    }
+
+function addcomments(){
+
+    event.preventDefault();
+
+ var name= document.getElementById('name').value;
+ var cid= document.getElementById('cid').value;
+ var message = document.getElementById('message').value;
+
+
+
+Meassges.push(new Enquery(name,cid,message));
+console.log(Meassges);
+}
+
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage_usercomments</title>
+</head>
+
+<body>
+
+    <form action="">
+        Enter Username :<input type="text" id="name"> <br> <br>
+        Enter UserComments<textarea name="" id="comments" cols="30" rows="5"></textarea> <br> <br>
+        <button onclick="addcomments()">AddComments</button> <br> <br>
+
+        
+      
+
+    </form>
+
+    <ul id="ultags" style="list-style-type: none;">
+
+
+
+    </ul>
+
+    <script>
+        var Arrayofvalues = [];
+
+        if (localStorage.getItem('usercomments') == null) {
+
+
+            localStorage.setItem('usercomments', JSON.stringify(Arrayofvalues));
+        }
+
+
+        function addcomments() {
+
+            event.preventDefault();
+
+            var usernamevalue = document.getElementById('name').value;
+            var commentsvalue = document.getElementById('comments').value;
+            var ultags = document.getElementById('ultags');
+            // ultags.innerHTML=username +"    " + comments;
+
+            var usercomments = {
+                'username': usernamevalue,
+                'comment': commentsvalue,
+                'value': generateid()
+            }
+            var comments = JSON.parse(localStorage.getItem('usercomments'));
+            comments.push(usercomments);
+            localStorage.setItem('usercomments', JSON.stringify(comments));
+
+            removefields();
+            removeduplicate();
+            showcomments();
+
+
+
+        }
+
+        function removeduplicate() {
+            var ultags = document.getElementById('ultags').innerHTML = "";
+
+
+
+        }
+
+        function removefields() {
+
+            document.getElementById('name').value = "";
+            document.getElementById('comments').value = ""; 
+        }
+        function showcomments() {
+            var ultags = document.getElementById('ultags')
+            var allcomments = JSON.parse(localStorage.getItem('usercomments'));
+            for (var i = 0; i < allcomments.length; i++) {
+
+                ultags.innerHTML = ultags.innerHTML + "<li> " + allcomments[i].username + "  :" + allcomments[i].comment + "  :  " +allcomments[i].value+  "<button onclick=edit1("+ allcomments[i].value +") >  Edit</button>"+  "<button onclick=delete1("+  allcomments[i].value+") >Delete</button>  "+"</li>";
+                
+            }
+
+        }
+
+        function generateid() {
+            if (localStorage.getItem('value') == null) {
+                localStorage.setItem('value', 0);
+            }
+            var ids = parseInt(localStorage.getItem('value'));
+            ids++;
+            localStorage.setItem('value', JSON.stringify(ids));
+            return ids;
+
+
+        }
+
+
+function delete1(value1){
+
+    event.preventDefault();
+
+    var allcomments = JSON.parse(localStorage.getItem('usercomments'));
+    for(var i=0;i<=allcomments.length;i++){
+       if( value1 == allcomments[i].value ){
+       allcomments.splice(i,1);
+       }
+    }
+localStorage.setItem('usercomments',JSON.stringify(allcomments));
+removeduplicate();
+
+showcomments();
+
+}
+
+    </script>
+
+
+</body>
+
+</html>
