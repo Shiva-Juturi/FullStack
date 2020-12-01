@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>call by value </h1>
+    <p   id='v1'></p>
+    <script>
+
+        var a = 10;
+        var b = 30;
+        var c = 50;
+
+        function f1(a, b, c) {
+            
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            a = 100;
+            b = 200;
+            c = 300;
+        }
+        function f2(a, b, c) {
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        f1(a, b, c);
+        f2(a, b, c);
+
+
+    </script>
+
+
+</body>
+
+</html>

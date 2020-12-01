@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    tr,
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+
+<body>
+
+    <h1>The XMLHttpRequest Object</h1>
+
+    <button type="button" onclick="loadDoc()">Request data</button>
+
+
+<h1>  Array Data (raw Data) </h1>
+    <p id="demo"></p>
+
+    <h1>  Convert Data in JSON Format </h1>
+
+    <p id="demo1"></p>
+
+    <h1>  Convert Raw Data data to Json and display in table format  </h1>
+    <table>
+        <thead>
+            <th>postId</th>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>body</th>
+        </thead>
+        <tbody id="table-data">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        
+        function loadDoc() {
+
+            var tables = document.getElementById("table-data");
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1/comments", true);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                   document.getElementById("demo1").innerHTML = JSON.parse(this.responseText);
+
+                 document.getElementById("demo").innerHTML = this.responseText;
+                    var data = JSON.parse(this.responseText);
+                    for (var i = 0; i < data.length; i++) {
+
+                        console.log(data.length, " data length");
+                        var row = `<tr>
+                         <td>${data[i].postId}</td>
+                         <td>${data[i].id}</td>
+                         <td>${data[i].name}</td>
+                         <td>${data[i].email}</td>
+                         <td>${data[i].body}</td>
+                                               </tr>`
+                        tables.innerHTML += row;
+
+                    }
+                }
+            };
+
+            xhttp.send();
+        }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

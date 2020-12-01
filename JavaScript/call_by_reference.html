@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<h1>  Call by Reference </h1>
+
+    <script>
+        var emp = {
+            name: 'nalini',
+            surname: 'juturi'
+
+        }
+
+        function m1(e1) {
+           
+            console.log(e1);
+            e1.name = 'Sambasiva Rao ';
+        }
+
+        function m2(e2) {
+
+            console.log(e2);
+            e2.wifename = 'Nalini';
+        }
+
+        m1(emp);
+        m2(emp);
+        console.log(emp);
+    </script>
+
+</body>
+
+</html>
