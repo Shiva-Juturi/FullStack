@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+body * {
+
+margin: 10px;
+border: 1px solid blue;
+
+}
+    </style>
+
+
+
+
+</head>
+<body>
+
+
+<span style="color: red;  font-size: larger; ">  if you remove  {capture:true}  parameter in that is event bubbling  </span><br> <br>
+<span style="color: red;   font-size: larger;">  if you put  {capture:true}  parameter in that is event Capture   </span> <br> <br> <br>
+<form action="">form 
+
+    <div> DIV
+        <p> P</p>
+
+    </div>
+
+</form>
+
+<script>
+
+var frm = document.querySelector('form');
+var div1 = document.querySelector('div');
+var p1 = document.querySelector('p');
+
+frm.addEventListener('click',function(){
+
+    alert(" I AM FORm");
+},{capture:true});
+
+div1.addEventListener('click',function(){
+
+alert(" I AM Div ");
+},{capture:true});
+p1.addEventListener('click',function(){
+
+alert(" I AM P");
+},{capture:true});
+
+
+
+</script>
+
+
+    
+</body>
+</html>

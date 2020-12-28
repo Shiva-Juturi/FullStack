@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+<button id="loginb"> Login</button>
+<button id="regbut">Register</button>
+</form>
+
+<form id="Loginforn">
+<input type="text"  id="l1"> 
+<button   onclick="Validateuser()"> Login1</button>
+
+
+</form>
+
+<form id="Regform">
+    <input type="text" > 
+    <button  >  Register</button>
+    
+    
+    </form>
+
+
+
+
+<script>
+
+
+document.getElementById('loginb').addEventListener('click',login);
+document.getElementById('Regform').style.display="none";
+document.getElementById('Loginforn').style.display="none";
+
+function login(){
+
+event.preventDefault();
+
+document.getElementById('Loginforn').style.display="block";
+
+}
+
+function  Validateuser(){
+
+  var  but=  document.getElementById('l1').value;
+
+ if(but == 'abc'){
+alert(" User Login ");
+
+document.getElementById('Loginforn').style.display="none";
+document.getElementById('loginb').style.display="none";
+event.preventDefault();
+ }
+ else{
+
+    alert(" Enter  wrong  value  ");
+    event.preventDefault();
+
+ }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -43,7 +43,7 @@ console.log(array2);
 
 console.log("  Filter the Object ");
 
-var names = ["Hyderabad", 1, true, "Bangalure", "AndhraPradesh", 4, "Chennai", 3, 2,0,99];
+var names = ["Hyderabad", 1, true, "Bangalure", "AndhraPradesh", 4, "Chennai", 3, 2, 0, 99];
 console.log(" Original Arrany ", names);
 var stringnames = [];
 var numbergnames = [];

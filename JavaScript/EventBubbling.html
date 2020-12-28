@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onclick="htmlbody()">
+
+    <div onclick="Div1">
+
+        <div onclick="Div11">
+
+            <h1 id="another" onclick="h1()"> Click is H1 Event bubbling is stoped ( event.stopPropagation(); )</h1>
+        </div>
+
+
+    </div>
+
+
+    <div onclick="Div2()">
+
+        <div onclick="Div21()">
+
+            <h1 onclick="h2()"> Click is H2 </h1>
+        </div>
+
+
+    </div>
+
+
+    <script>
+        function h2() {
+            alert(" i am h2()");
+        }
+
+        function Div21() {
+            alert(" i am Div21()");
+
+        }
+
+        function Div2() {
+
+            alert(" i am Div2()");
+
+        }
+
+
+        function h1() {
+            alert(" i am h1      event.stopPropagation(); and  event.stopImmediatePropagation(); ");
+             event.stopPropagation();
+
+         //  event.stopImmediatePropagation();    //  if add any addEventListener after h1  that one also stop 
+        }
+
+        function Div11() {
+            alert(" i am Div11()");
+
+        }
+
+        function Div1() {
+
+            alert(" i am Div1()");
+
+        }
+        function htmlbody() {
+
+            alert("iam htmlbody()");
+        }
+
+        document.getElementById('another').addEventListener('click', another);
+
+        function another() {
+
+            alert('another is called ');
+
+        }
+
+
+    </script>
+</body>
+
+</html>
