@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body1">
+<script>
+
+var body1 = document.getElementById('body1');
+var form1 = document.createElement('form');
+
+
+var uname = document.createElement('input');
+uname.type='text';
+uname.id='uname';
+uname.placeholder='Enter User Name';
+
+var pwd = document.createElement('input');
+pwd.type='password';
+pwd.id='password';
+pwd.placeholder='Enter User password';
+
+var submit = document.createElement('button');
+submit.innerHTML='Login';
+submit.onclick= login;
+
+var remove = document.createElement('button');
+remove.innerHTML='Remove form';
+remove.onclick= function (){
+event.preventDefault();
+
+body1.removeChild(form1);
+
+}
+
+
+
+
+function login(){
+    event.preventDefault();
+
+    var uname1= document.getElementById('uname').value;
+    var pwd1= document.getElementById('password').value;
+   
+    if(uname1 === 'abc'  &&  pwd1 ==='abc'){
+
+        alert(" login Success");
+
+    }
+    else{
+
+        alert(" login Fail");
+    }
+
+}
+
+
+form1.appendChild(uname);
+
+form1.appendChild(pwd);
+form1.appendChild(submit);
+form1.appendChild(remove);
+
+body1.appendChild(form1);
+
+
+
+
+</script>
+
+    
+</body>
+</html>
