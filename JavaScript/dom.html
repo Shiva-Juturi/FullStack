@@ -31,6 +31,10 @@ remove.innerHTML='Remove form';
 remove.onclick= function (){
 event.preventDefault();
 
+
+var val =  document.getElementsByTagName(form1)[0];
+
+console.log(val);
 body1.removeChild(form1);
 
 }
@@ -40,6 +44,9 @@ body1.removeChild(form1);
 
 function login(){
     event.preventDefault();
+    var val =  document.getElementsByTagName('form1')[0];
+
+console.log(val);
 
     var uname1= document.getElementById('uname').value;
     var pwd1= document.getElementById('password').value;
